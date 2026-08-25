@@ -1,0 +1,130 @@
+.app {
+  /* Fix: Prevent padding from causing horizontal overflow on narrow screens. */
+  width: 100%;
+  max-width: 640px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: system-ui, sans-serif;
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Fix: Use responsive width so the header does not overflow on narrow screens. */
+width: 100%;
+box-sizing: border-box;
+  box-sizing: border-box;
+  white-space: nowrap;
+  background: #1f2933;
+  color: white;
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.header-bar h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.ticker {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.add-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.add-row input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.add-row button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.member-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.member-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.member-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.status-pill {
+  border: none;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.status-pill.ok {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-pill.blocked {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.remove-icon {
+  cursor: pointer;
+  color: #9ca3af;
+  font-size: 14px;
+  padding: 4px;
+}
+
+.remove-icon:hover {
+  color: #ef4444;
+}
+
+
+
+@media (max-width: 500px) {
+  .app {
+    padding: 16px;
+  }
+
+  .header-bar {
+    white-space: normal;
+    gap: 12px;
+  }
+/* Fix: Allow the input and button to wrap instead of overflowing on narrow screens. */
+  .add-row {
+    flex-wrap: wrap;
+  }
+/* Fix: Allow the input to shrink inside the flex layout on narrow screens. */
+  .add-row input {
+    min-width: 0;
+  }
+}
